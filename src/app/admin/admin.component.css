@@ -1,0 +1,61 @@
+*{
+    font-size: large;
+}
+
+small{
+    font-size: medium;
+}
+
+#newStudent{
+    background-color: coral;
+    margin-left: 50px;
+}
+
+#main{
+    margin-left: 50px;
+}
+
+#content{
+    margin-top: 20px;
+}
+
+h1{
+    font-size: x-large;
+}
+
+small { 
+    display:inline-block; 
+    margin-right: 30px; 
+}
+
+.tableStudent{
+    width: auto;
+}
+
+.trStudent{
+    width: auto;
+}
+
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+header{
+    margin-top: 10px;
+    margin-bottom: 10px ;
+    font-weight: 600;
+    font-size: larger;
+    font-family: sans-serif;
+}
+
+.edit{
+    text-align: right;
+}
+
+.del{
+    text-align: left;
+}

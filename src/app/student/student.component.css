@@ -1,0 +1,13 @@
+#delete{
+    margin-left: 10px; 
+    height: 39px;width: 80px; 
+    background-color: rgb(216, 81, 32);
+    color: wheat;
+    font-weight: normal;
+}
+
+
+h1{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

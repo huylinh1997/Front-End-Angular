@@ -1,0 +1,73 @@
+<h1>Register Form</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+
+
+  <div class="form-group row">
+    <label class="col">
+      username
+      <input type="text" class="form-control" formControlName="username">
+
+      <div [ngClass]="{'alert alert-danger' : (form.get('username').errors  &&  (form.get('username').dirty || form.get('username').touched ))}" >
+        <span  *ngIf="(form.get('username').errors  &&  (form.get('username').dirty || form.get('username').touched ))"  >
+          <span *ngIf="form.get('username').errors.required">
+            Username is required
+          </span>
+        </span>
+      </div>
+    </label>
+  </div>
+
+
+
+  <div class="form-group row">
+    <label class="col">
+      email
+      <input type="email" class="form-control" formControlName="email">
+      <div
+      [ngClass]="{'alert alert-danger' : (form.get('email').errors  &&  (form.get('email').dirty || form.get('email').touched ))}">
+      <span class="help-block"
+        *ngIf="(form.get('email').errors  &&  (form.get('email').dirty || form.get('email').touched ))">
+        <span *ngIf="form.get('email').errors.required">
+          Email is required
+        </span>
+
+        <span *ngIf="form.get('email').errors.email">
+          This is not an Email
+        </span>
+      </span>
+    </div>
+    </label>
+  </div>
+
+
+
+  <div formGroupName="pw">
+    <div class="form-group row">
+      <label class="col">
+        Password
+        <input type="password" class="form-control" formControlName="password">
+        
+        <div [ngClass]="{'alert alert-danger' : (form.get('pw').get('password').errors  &&  (form.get('pw').get('password').dirty || form.get('pw').get('password').touched ))}" >
+          <span  *ngIf="(form.get('pw').get('password').errors  &&  (form.get('pw').get('password').dirty || form.get('pw').get('password').touched ))"  >
+            <span *ngIf="form.get('pw').get('password').errors.required">
+              Password is required
+            </span>
+          </span>
+        </div>
+  
+
+      </label>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col">
+        Confirm Password
+        <input type="password" class="form-control" formControlName="confirmPassword">
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Sign Up</button>
+  </div>
+</form>

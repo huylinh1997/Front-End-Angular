@@ -1,0 +1,66 @@
+<h1>New Student</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+  <div class="form-group row">
+    <label class="col">
+      Your Name
+      <input type="text" class="form-control" formControlName="name">
+      <div [ngClass]="{'alert alert-danger' : (form.get('name').errors  &&  (form.get('name').dirty || form.get('name').touched ))}" >
+        <span  *ngIf="(form.get('name').errors  &&  (form.get('name').dirty || form.get('name').touched ))"  >
+          <span *ngIf="form.get('name').errors.required">
+            Name is required
+          </span>
+        </span>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Your Email
+      <input type="email" class="form-control" formControlName="email">
+      <div
+      [ngClass]="{'alert alert-danger' : (form.get('email').errors  &&  (form.get('email').dirty || form.get('email').touched ))}">
+      <span class="help-block"
+        *ngIf="(form.get('email').errors  &&  (form.get('email').dirty || form.get('email').touched ))">
+        <span *ngIf="form.get('email').errors.required">
+          Email is required
+        </span>
+
+        <span *ngIf="form.get('email').errors.email">
+          This is not an Email
+        </span>
+      </span>
+    </div>
+    </label>
+  </div>
+  <div class="form-group row">
+    <label class="col">
+     Your Birth Day
+      <input data-provide="datepicker" type="date" class="form-control" formControlName="date_of_birth" >
+      <div [ngClass]="{'alert alert-danger' : (form.get('date_of_birth').errors  &&  (form.get('date_of_birth').dirty || form.get('date_of_birth').touched ))}" >
+        <span  *ngIf="(form.get('date_of_birth').errors  &&  (form.get('date_of_birth').dirty || form.get('date_of_birth').touched ))"  >
+          <span *ngIf="form.get('date_of_birth').errors.required">
+            Birthday is required
+          </span>
+        </span>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Your Class Name
+      <input type="text" class="form-control" formControlName="classname">
+      <div [ngClass]="{'alert alert-danger' : (form.get('classname').errors  &&  (form.get('classname').dirty || form.get('classname').touched ))}" >
+        <span  *ngIf="(form.get('classname').errors  &&  (form.get('classname').dirty || form.get('classname').touched ))"  >
+          <span *ngIf="form.get('classname').errors.required">
+            Class Name is required
+          </span>
+        </span>
+      </div>
+    </label>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Add</button>
+  </div>
+</form>

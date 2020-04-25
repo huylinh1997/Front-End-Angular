@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>List Student</header>
+    <table  id="tableStudent" class="table table-responsive table-striped" >
+      <thead>
+        <tr >
+          <th scope="col">Name</th>
+          <th scope="col">Birthday</th>
+          <th scope="col">ClassName</th>
+          <th scope="col">Email</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="trStudent" *ngFor="let student of students" >
+          <td>{{ student.name }}</td>
+          <td>{{ student.date_of_birth | date:"MM/dd/yyyy"  }}</td>
+          <td>{{ student.classname }}</td>
+          <td>{{ student.email }}</td>
+          <td >
+            <a id="edit" style="margin-right: 5px;" href="/admin/student/{{student.id}}">
+              <i class="fas fa-edit"></i>
+            </a>
+          </td>
+          <td>
+            <a id="del" href="/admin" (click)="deleteStudent(student.id)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+
+</html>
