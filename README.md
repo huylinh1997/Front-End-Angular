@@ -1,3 +1,3 @@
-Frontend Website https://frontendangularapp.herokuapp.com/admin
+Frontend Website https://frontendangularapp.herokuapp.com/
 
 Deploy with heroku
